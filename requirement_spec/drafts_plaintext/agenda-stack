@@ -1,0 +1,18 @@
+Sett oppp utviklingsprogrammer og rammeverk
+~$ apache2 -v
+Server version: Apache/2.4.18 (Ubuntu)
+Server built:   2016-01-05T00:00:00
+~$ psql --version
+psql (PostgreSQL) 9.5.0
+~$ php5 -v
+PHP 5.6.17-3+deb.sury.org~trusty+1 (cli) 
+Copyright (c) 1997-2015 The PHP Group
+Zend Engine v2.6.0, Copyright (c) 1998-2015 Zend Technologies with Zend OPcache v7.0.6-dev, Copyright (c) 1999-2015, by Zend Technologies
+
+Konfigurering
+http://localhost:8000/config.php; der 8000 representerer porten som lyttes på. 80 brukes til HTTP-sendinger. Portlytting konfigureres i Apache.
+
+Annet
+http://httpd.apache.org/docs/current/mod/core.html#documentroot
+http://wiki.nginx.org/Symfony
+http://knpuniversity.com/screencast/symfony/first-page

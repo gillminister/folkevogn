@@ -1,0 +1,55 @@
+%Overview
+\section{Ikke-Funksjonelle Krav}
+\rowcolors{2}{row-gray}{white}
+\begin{tabular}{ | p{60pt} | p{60pt} | p{9cm} | }
+	\hline
+	\rowcolor{header-blue}
+	\nfritem{\textcolor{white}{ID}}{\textcolor{white}{Use Case ID}}{\textcolor{white}{Krav}}
+	\hline
+	\nfritem{NFR-UI-01}{C-01}{Bruker kan logge inn på systemet ved å oppgi mail/passord-kombinasjon}
+	\nfritem{NFR-UI-01-A}{C-01}{\textcolor{red}{Dersom bruker har rolle Employee eller lavere vises kun link til installasjon av app}}
+	\nfritem{NFR-UI-02}{C-01}{Bruker kan sende en 'reset passord'-link til sin registrerte mail (glemt passord)}
+	\nfritem{NFR-UI-03}{C-02}{Kan vises ukentlig vaktliste med alle vakter listet i vaktlisten}
+	\nfritem{NFR-UI-04}{C-02}{Mulig å vise vakter fra andre uker i ukentlig vaktliste}
+	\nfritem{NFR-UI-05}{C-03}{Vaktlisten kan også vises over et månedlig perpektiv}
+	\nfritem{NFR-UI-06}{C-04}{Den månedlige vaktlisten fylles med alle vakter i nåværende måned}
+	\nfritem{NFR-UI-07}{C-04}{Det er mulig å vise vakter fra andre måneder i månedlig vaktliste}
+	\nfritem{NFR-UI-08}{C-05}{Det er mulig å vise en liste over kommende vakter (agenda) for ansatt}
+	\nfritem{NFR-UI-09}{C-A-01}{\textcolor{red}{Define Operation}}
+	\nfritem{NFR-UI-10}{C-M-01}{Manager kan registrere ny vakt, og koble denne til en ansatt. Dette gjøres direkte i vaktlisten}
+	\nfritem{NFR-UI-11}{C-M-02}{Manager kan endre/slette vakter som eksisterer. Inkluderer endring av ansatt som holder vakten}
+	\nfritem{NFR-UI-12}{C-M-03}{Manager skal kunne kopiere vakter fra bestemte uker/måneder inn i andre uker/måneder}
+	\nfritem{NFR-UI-13}{C-M-04}{Manager kan godkjenne/avslå ønske fra ansatt om å gi bort vakt}
+	\nfritem{NFR-UI-14}{C-M-04}{Manager kan velge aktuelle kandidater til å ta vakt som gis bort, og publisere dette til valgte kandidater (ansatte)}
+	\nfritem{NFR-UI-15}{C-M-05}{Manager kan godkjenne/avslå ønske fra to ansatte om å bytte to (respektivt tilhørende) vakter}
+	\nfritem{NFR-UI-16}{C-M-06}{Manager kan registrere ny ansatt}
+	\nfritem{NFR-UI-17}{C-M-06}{Dersom mail oppgis, sendes invitasjon til systemet Agenda til mail-adressen sammen med login-info}
+	\hline
+\end{tabular}
+\newpage
+\begin{tabular}{ | p{60pt} | p{60pt} | p{9cm} | }
+	\hline
+	\nfritem{NFR-UI-18}{C-M-07}{Manager kan endre/slette ansatte}
+	\nfritem{NFR-UI-19}{C-M-08}{Manager kan registrere ny stilling}
+	\nfritem{NFR-UI-20}{C-M-09}{Manager kan endre/slette stilling}
+	\nfritem{NFR-UI-21}{C-M-10}{Manager kan tilordne/fjerne stilling til/fra ansatt}
+	\nfritem{NFR-UI-22}{C-M-11}{Manager kan registrere ny kunngjøring}
+	\nfritem{NFR-UI-23}{C-M-12}{Manager kan endre/slette kunngjøring}
+	\nfritem{NFR-UI-24}{C-M-13}{Manager kan tilordne/fjerne kunngjøring til/fra vakt}
+	\nfritem{NFR-UI-25}{C-E-01}{Ansatt kan logge inn på applikasjonen ved å oppgi mail/passord-kombinasjon}
+	\nfritem{NFR-UI-26}{C-E-01-A}{\textcolor{red}{mail/passord-kombinasjon oppgis kun første gang applikasjonen startes; lagres på telefonen}}
+	\nfritem{NFR-UI-27}{C-E-02}{Ansatt kan vise og endre egen person-data (egen profil)}
+	\nfritem{NFR-UI-28}{C-E-03}{Ansatt kan åpne og vise detaljer for individuelle vakter; ansatt må være 'eier' av vakt}
+	\nfritem{NFR-UI-29}{C-E-04}{Ansatt kan opprette ønske om å gi bort vakt; ønsket publiseres til Manager}
+	\nfritem{NFR-UI-30}{C-E-05}{Ansatt kan gjøre krav på vakt som er ønsket gitt bort, dersom ansatt er valgt som mulig kandidat for vakten}
+	\nfritem{NFR-UI-31}{C-E-06}{Ansatt kan sende forespørsel til kollega om å bytte vakt. Må oppgi egen vakt, og ønsket vakt (fra kollega)}
+	\nfritem{NFR-UI-32}{C-E-06}{Kollega kan godta/avslå forespørsel om å bytte vakt med ansatt; eventuelt ønske om vaktbytte publiseres til Manager}
+	\nfritem{NFR-SEC-01}{N/A}{Dataen lagres i et trygt format}
+	\nfritem{NFR-SEC-02}{N/A}{Dataen transporteres i trygt format}
+	\nfritem{NFR-SEC-03}{N/A}{Brukernavn og passord skal behandles trygt}
+	\nfritem{NFR-SEC-04}{N/A}{Brukere i systemet skal ikke ha flere rettigheter enn det som er nødvendig for at tjenestene skal kunne ytes}
+	\nfritem{NFR-SEC-05}{N/A}{Programvare på server skal kun være tilgjengelig for Agenda-ansatte, både i sikkerhetsmessig og administrativ forstand}
+	\nfritem{NFR-SEC-06}{N/A}{Programvare på server skal være uten sikkerhetshull}
+	\nfritem{NFR-SEC-07}{N/A}{Serveren skal være utrustet til å takle DoS(Denial-of-Service)-angrep}
+	\hline
+\end{tabular}

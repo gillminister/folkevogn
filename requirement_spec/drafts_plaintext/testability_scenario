@@ -1,0 +1,6 @@
+Source              | Unit tester class.
+Stimulus            | The unit tester starts running
+Environment         |  During development.
+Artifacts           | Function that is tested.
+Response            | Test results are generated at a testing component view.
+Response Measure    | How much of the code is played.

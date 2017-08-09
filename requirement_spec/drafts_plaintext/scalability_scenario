@@ -1,0 +1,6 @@
+Source              | The manager who adds users to the system. (Power)
+Stimulus            | A new user is added.
+Environment         | Normal deployment, run time.
+Artifacts           | Doctrine. DBMS. Controller.
+Response            | System functions as normal. Status quo.
+Repsonse Measure    | How much slower the system performs basic services. Precense of negative network effects

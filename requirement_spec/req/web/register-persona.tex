@@ -1,0 +1,10 @@
+\beginfr{Register Persona}
+	\fritem{FR-M-06-01}{NFR-UI-16}{Manager kan besøke nettside hvor det er mulig å opprette ny Persona}
+	\fritem{FR-M-06-01-A}{NFR-UI-16}{Manager oppgir persondata som tilhører ansatt. Minstekrav er fornavn (mail er ikke påkrevd)}
+	\fritem{FR-M-06-01-B}{NFR-UI-16}{Skjema poster til kontroller, som persisterer ny bruker. Bruker eksisterer som en Persona-entitet, og har tilhørende Employee-entitet}
+	\fritem{FR-M-06-02}{NFR-UI-17}{Dersom mail oppgis, vil en aktivering-token genereres og persisteres i Persona-entiteten}
+	\fritem{FR-M-06-02-A}{NFR-UI-17}{Persona-entiteten inneholder et \texttt{isActive}-flagg (\texttt{default: false}) som settes til \texttt{true} når bruker besøker URL \texttt{/aktiver/\{token\}}}
+	\fritem{FR-M-06-02-B}{NFR-UI-17}{Link til \texttt{/aktiver/\{token\}} sendes via mail til bruker}
+	\fritem{SEC-M-06-01}{NFR-UI-16}{Oppretting av ny Persona krever \texttt{ROLE\_MANAGER} eller høyere}
+	\fritem{SEC-M-06-02}{NFR-UI-16}{Inputs i ny Persona-skjema valideres før de prosesseres}
+\stopfr

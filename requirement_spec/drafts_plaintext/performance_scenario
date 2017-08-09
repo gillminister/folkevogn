@@ -1,0 +1,6 @@
+Source              | A component within the view fires a change to the data model
+Stimulus            | Write event.
+Environment         | Normal deployment
+Artifacts           | Controller. View. Model.
+Response            | The MVC must validate and deliver the input down to the datamodel wwhere Doctrine ports it to the Database.
+Response Measure    | Time to change the data model to its new state.

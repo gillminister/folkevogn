@@ -1,0 +1,133 @@
+Prosjektbeskrivelse for -Agenda: basert på pdf
+
+
+Et digitalt personalsystem
+
+Effektiviserende - ressursbesparende - brukervennlig
+
+Systemet består av 2 deler.
+
+* En administrativ webversjon for sjef
+* En app for dei ansatte
+Arkitektur
+Klient tjener + Observer-Observed + MVC (CAC)
+Lagdelt (modul)
+
+
+I admin webversjon skal sjefen kunne sette opp vaktliste, behandle vaktbytteforespørsler fra dei ansatte og sette opp ferieplan. I appen skal dei ansatte kunne se sine fremtidige vakter flere måneder frem i tid, bytte vakter og søke ferie.
+Systemets 3 arenaer er: Vaktliste, Vaktbytte og Ferieplan
+
+Sentrale prosesser:
+For tilsette
+*Vise vaktliste for en gitt dag
+*Bytte vakt
+  *Tilby/tilgjengeliggjøre seg bytte av vakt
+  *Send forspørsel om bytte av vakt
+*Vise ferieplan
+*Redigere (flexi)ferie
+*Notat til vakt
+For ledelse (sjef, HR-ansbarlig, o.l.)
+
+
+Hvilken verdi er det jeg ønsker å tilby mine bedriftskunder?
+For sjef:
+
+Ressursbesparende
+Med et digitalt system som Agenda vil en spare mye tid og unngå
+unødvendig papirarbeid. 
+
+Fleksibelt
+I og med at Agenda er et digitalt system så vil det være enkelt for sjef å gjøre endringer i vaktlisten også underveis i arbeidsuken. Tidligere har sjefen gjerne måtte printet ut en oppdatert vaktliste hver uke. Med Agenda oppdateres de endringene sjefen gjør i sin webversjon i de ansattes app over et trådløst nett på sekunder.
+
+Kontroll
+At alle vaktbytter går gjennom Agenda gir sjefen kontroll på hvem som er på jobb til enhver tid. De ansatte ordnet gjerne vaktbytter internt seg imellom uten at det har trengt å gå gjennom sjef tidligere.
+
+For dei ansatte:
+
+Oppdatert 
+
+De ansatte vil i sin Agenda-app ha en oppdatert oversikt over egne vakter flere måneder frem i tid. På den måten vil de ansatte enkelt kunne holde kontroll på når de skal på jobb. Dette er spesielt viktig for f.eks studenter som kun jobber deltid som gjerne har mer en nok å holde styr på fra før.
+
+Forenklet vaktbytteprosess
+
+Med Agenda har de ansatte to måter å bytte vakter. En kan enten velge å gi bort en vakt. Da vil sjef i sin webversjon få opp en rekke personer som kan være aktuelle for å ta vakten. Da er det opp til sjef å merke av de personene som er aktuelle. Deretter vil de kollegene som er merket som godkjente til å ta vakten få en varsel i appen. Da er det igrunn første mann til mølla. Den andre muligheten er å bytte bort en vakt og få en vakt i retur av en kollega. Praktisk om en ønsker fri en spesiell dag uten å minste timer. Tidligere har det gjerne vært slik at en måtte tatt en ringerunde rundt til alle de ansatte på jobben du vet kan erstatte deg om en ville bytte bort en vakt.
+
+
+God kommunikasjon
+De ansatte vil i sin Agenda-app få varsel ved endringer. Dette bidrar til
+bedre kommunikasjon mellom sjef og ansatt. 
+De ansatte vil også kunne trykke på “info” på hver vakt, de vil da få opp en
+oversikt over hvilke kolleger som skal jobbe den dagen. Sjef vil også kunne
+legge inn et notat på en vakt med f.eks arbeidsoppgaver eller viktige
+beskjeder vedrørende vakten.
+
+
+
+Prosjektets måloppnåelse
+
+
+*Agenda har mottatt 100 000,- fra Kommunalt næringsfond
+
+*Agenda har mottatt 10 000,- fra Kommunalt næringsfond for unge 
+
+*Agenda har mottatt 91 500,- fra Innovasjon Norge
+
+
+*Det er utviklet systemets design i samarbeid med Pixelwerk.
+
+*Det er gjort en markesundersøkelse for markedsavklaring fase1
+støttet av Innovasjon Norge.
+
+*Agenda ble nominert av Kunnskapsparken og Fylkeskommunen til
+årets grunder for ungdom 2015 i Sogn og Fjordane.
+
+Det er inngått skriftlig intensjonsavtaler for testing av systemet med:
+
+*Elkjøp, Florø
+*Peppes pizza, Førde
+*Cafe Kandis, Florø
+*CentrumBar, Florø
+*Kysten Bar & Restaurant, Florø
+*Krokane barnehage, Florø
+
+og muntlig interesse fra..
+Cubus, Florø
+Kidsa Breistein Barnehage, Åsane
+Sørstrand maritime FUS barnehage, Florø
+Torvmyrane barnehage, Florø
+Burgerking bergen storsenter, Bergen
+Isbjørnis Fabrikken, Askøy
+Nor Tekstil hovedkontor, Florø-
+Muligheter, marked og salgsmodell
+
+Hvem er kunden, hvordan ønsker vi å nå dem og hvordan skal vi
+tjene penger?
+
+
+Jeg ser store muligheter i Norden innen følgende bransjer: Elektronikk, klær, sport, dagligvare, hotell, barnehage, helse og omsorg, taxi, restaurant, cafe og uteliv. Felles for alle desse bransjene er at de har mange deltidsansatte og det er på arbeidsplasser med mange deltidsansatte vi ser de problemstillingene vi ønsker å løse er størst. 
+  Markedsstrategien er todelt. Agenda er et system som viser seg å være svært ressursbesparende for både små selvstendige restauranter og cafeer som for de store kjedene. Jeg vil derfor opprette en profil, reklamevideo og nettside rettet mot de selvstendige virksomhetene innenfor vårt kundesegment. Og en meir direkte salgsstrategi rettet mot de store kjedene som går ut på å teste ut systemet i et eller fleire av den aktuelle kjedens utsalgsteder for senere å bruke utsalgstedet og deres tilbakemeldinger som en referanse videre til ledelsen i kjeden for å forhandle frem en lisensavtale med hele kjeden. Målet er på sikt å dekke etterspørselen etter et effektivt og ressursbesparende personalsystem i Norden.
+ Selskapet skal tjene penger gjennom lisensavtaler med bedriftskundene. Hvor vi tar utgangspunkt i å ta betalt pr. aktive bruker av systemet. 39kr/ mnd pr. aktive bruker. f.eks ved 20 ansatte = 780kr/mnd eks. mva På den måten vil en kunne opparbeide seg en kundebase og en forutsigbar og stabil inntjening, som er med på å danne grunnlaget for en internasjonal satsing.
+
+Konkurrenter og fremdriftsplan
+Hvem er konkurrentene/substituttene og hvordan skiller Agenda seg fra sine konkurrenter/substitutter?
+*Tidsbanken
+*Gat
+*Timecloud
+*Planday
+*Timegrip
+
+Agenda ønsker å være gode på: Pris, Produkt og Distribusjon. Agenda ønsker å være konkurransedyktig på pris samtidig som vi sikrer god inntjening ved å holde et lavt kostnadsnivå. Agenda skiller seg ut ved å være det enkleste og mest brukervennlige systemet på markedet. Agenda er et system som fungerer på tvers av flere bransjer noe som gir oss et stort satsingområde og flere “ben” å stå på.
+
+Fremdriftsplan
+
+Aktivitet Tidsperiode
+Finne en eller flere medgrundere som
+kan utvikle (programmere) nov-des
+Utvikle en testversjon jan-mars
+Sette igang med testing av systemet
+hos testpilotene mars- april
+Lansering april ->
+Innsalg til kjeder april ->
+Hente kapital fra investor april ->
+
+

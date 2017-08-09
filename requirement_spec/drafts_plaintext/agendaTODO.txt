@@ -1,0 +1,98 @@
+agenda - Website todo
+Routing
+Controller
+view, twigfiler, folder i veiw
+
+Ref: ~ = Prosjektrot
+<meta name="robots" content="noindex, follow">
+
+DO-droplet
+ - Flytt server sh - script inn i egen mappe adskilt fra prosjektmappe
+
+Git
+ - Skille ut dokumentasjon, krav og diverse ut i egne brancher
+
+DO-droplet
+ - Oppdater/klon master branch paa nytt
+
+View
+Forside - Profil
+ - base.html.twig + Two linjer paa toppen
+ - home _mappe
+ - index.html i home _mappe
+
+Controller
+ - legg til home med path '/' i ~/app/config/routing.yml
+ - Definer ~/src/AppBundle/Controller/homeController.php
+
+Modell
+ - Definer entiteter med gettere og settere manuelt
+ - Definer rolle 'root' iflg parameters.yml
+ - Kjør postgreSQL - server
+
+Referanse
+Vektor webpage i htdocs
+
+Farger og former, header blokk i webside, base.html
+Dashboard	Høyde 60 pix	#af4e2b evt #ca4d24 for å matche logofarve	Lengde 1000px
+Helt til venstre: 	Logo - 60 x 60
+showknapp	Forespurnader	Ring med TALL inni
+showknapp	Vaktliste
+showknapp	FNAME LNAME
+
+
+<ul><a href='{{ path('profile') }}'>Profil</a></ul>
+
+
+Submeny		Høyde 40 pix	#bf7155
+
+Markering		808080
+Lysgråmarkering	e6e6e6
+
+---
+Elementer i visning
+
+base.html.twig
+blokk Dashboard
+
+
+Login - side
+Blokk med logo
+Blokk med loginform
+
+Profil - side
+Arve fra base.html.twig
+
+______________________________________________________________
+Spørringer til database - repository
+Profil
+Hent all info i person, vis i tabellform.
+
+
+
+ToDo - NonFunctional requirements:
+ - Write scenarios (possibly more then one) for each major quality
+ - Refine qualities
+ - Work on constraints
+    - We have enough constrants. Now we need to define some critical quality scenarios and lay down tactics to deal with them
+
+
+
+- BPMN - modeller for beskrevede oppgaver i kravspec og uc - modeller
+- Database - oppsett av testtjener
+- Server howTo - Linux
+- Oppsett av pakkeavhengigheter i composer.json
+- Sett opp barebone server
+Constraints
+. Spesialiser, webbasert kontrollapp tilgjengelig kun for hr og ledelse
+. App for ansatte på hvilken som helst enhet. Ikke native app for droid og ifon. 
+. Vi drifter egen skybasert tjener som leverer 1) web appen for ledelse og 2) vaktappen til ansatte. Ergo må systemet autentisere og gjenkjenne systemets brukere og skille mellom leder og vanlig ansatt.
+. Vaktappen er webbasert og kjører fra en annen tjener. Denne appen er ikke native - da må vi lage tre ulike implementasjoner av samme program.
+. Klient-tjener?
+. MVC/laginndeling, det vil si adskilt logikk for handtering av webfrontend, autentiseringslogikk, kontrollere til visningen, og datamodellen.
+. Mulig teknologi for realisering av arkitektur: MySQL, Symfony, PHP, Twig
+. Det skal være mulig å aksessere programvaren utenfor kundens intranett.
+
+Alternatively, Agenda could deliver a licensed copy to each customer such that they maintain their own database, and then more easily integrate Agenda towards other local information systems (better flexibility, maintainability becomes critical attribute)
+ - Use Case: Employee wants to swap shift before they arrive at work, that is, wherever, whenever they want.
+ - Use Case: The IT department may want to integrate Agenda into their own information system.

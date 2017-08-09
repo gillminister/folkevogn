@@ -1,0 +1,29 @@
+Source              | The Developers of Agenda
+Stimulus            | Adding a new component to an incremental version
+Environment         | The incremental version of the system should first be pushed to the testing branch, i.e. the change is done on a design version. When testing this branch, the system suddenly behaves differently overall.
+Artifacts           | The new component under development. GUI. Differently behaving controllers. Data.
+Response            | Edit misbehaving controllers and adjust data model and view.
+Response Measure    | How many classes that need editing/time taken to make test branch 'work'.
+
+Kilde til stimuli		Opprinnelse til årsaken til et scenario
+Stimuli					Årsaken til et scenario
+Systemets tilstand	Hvilket stadie systemet er i når scenariet inntreffer
+Artifakter				Elementer av systemet som påvirkes av stimuli
+Respons				Aktivitet som utføres under scenariet
+Mål på respons		Responsen bør måles/kvantifiseres slik at oppnåelse av kvalitetskravet testes
+
+Modifiserbarhet
+
+Kilde til stimuli		Opprinnelse til årsaken til et scenario
+Stimuli					Årsaken til et scenario
+Systemets tilstand	Hvilket stadie systemet er i når scenariet inntreffer
+Artifakter				Elementer av systemet som påvirkes av stimuli
+Respons				Aktivitet som utføres under scenariet
+Mål på respons		Responsen bør måles/kvantifiseres slik at oppnåelse av kvalitetskravet testes
+
+Kilde til stimuli		Utviklere av systemet
+Stimuli					Årsaken til et scenario
+Systemets tilstand	Hvilket stadie systemet er i når scenariet inntreffer
+Artifakter				Elementer av systemet som påvirkes av stimuli
+Respons				Aktivitet som utføres under scenariet
+Mål på respons		Responsen bør måles/kvantifiseres slik at oppnåelse av kvalitetskravet testes

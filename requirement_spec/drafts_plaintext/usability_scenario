@@ -1,0 +1,6 @@
+Source              | The end user.
+Stimulus            | The end user decides to try out the system.
+Environment         | Runtime.
+Artifacts           | The system evaluated as a whole. GUI.
+Response            | The end user attempts to switch or disown a shift they discover they cannot work on.
+Repsonse Measure    | The end user praises the software to their boss.

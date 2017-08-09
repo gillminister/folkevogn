@@ -1,0 +1,165 @@
+The software may be produced as a web-based application
+The web app may produce two different views, one administrative ment for managers and HR, and one shift viewer for the one employee running it
+  - In detail, the client side of the architecture will consist of a web browser only. The server contains logic for recognizing managers from employees (enum trustlevel in Personell - entity) and shows each of the two different staff hierarchy member. If this (mobile-oriented Windows Phone-ish) logic cannot be realized within Symfony, an embedded browser must be developed for at least six different platforms (iOS, Android, Windows Phone, Windows 7 - 10)
+
+It will not be nescessary to download any native apps from App Store or Google Play, as it would mean developing the same mobile app twice using different languages.
+ - Better system integrity
+The software may be delivered to the customer as a cloud based service
+  - Possible, yet not nescessarily the best or cheapest vendor, e.g. DigitalOcean
+It should be possible for the employee to review their shifts outside the company intranet
+  - Service in the cloud
+Possible technologies used to realize the architecture:  PostgreSQL, Doctrine, Symfony, PHP, Twig
+Layered software architecture
+Application GUI must scale with the screen (save for later increments, perchance?)
+  - Ways to achieve this: css3 media queries - http://webdesignerwall.com/tutorials/responsive-design-with-css3-media-queries; polyfill from css-element-queries (https://github.com/marcj/css-element-queries, MIT-licensed, authored by Marc J. Schmidt)
+The software may need an authentication component in which it seperates managers from regular employees (are the managers represented in the data model???)
+The manager needs to be notified when a shift is disowned.
+  - Is this not a functional requirement, given that that this looks like functionality, that is coded in the application?'
+
+The webadmin app should have the following dashboard buttons: 'forespurnader for vaktbytte (#)', 'forespurde vaktbytter (#)', 'tilsette', 'vaktliste', 'Publiser endringar' (seperate button, writes changes to data modell).
+  - Note: There might be more dashboard items to add, insofar as it leads to a net decrease of the total entropy of the interface
+  - CSS may be used to make it look nice. Bang. Good CSS ethics should be exercised.
+
+The web server stack shall utilize Symfony v3 as PHP-framework.
+
+The graphical user interface must convey text in Norwegian Nynorsk.
+
+The git repository must have a testing branch for developing increments.
+
+The system must update the data model correctly.
+
+The system must display the data model in the view correctly.
+
+The authentication module must be able to recognize the user as either a manager (who is entitled access to editing staff shifts and handle requests for shift disownments and requests for shift swapping)
+
+iT should be possible for the Manager to put more shifts on the same staff member on the same day, but if the total hours allocated exceed expected workhours , then a warning is issued.
+
+
+Systemet realiseres i en skybasert applikasjon over et nettleser-grensesnitt.
+Det vil ikke være nødvendig å laste ned noen mobilapps fra App Store eller Google Play for å kunne bruke systemet, ettersom det ville bety å utvikle det samme mobile app to ganger til to forskjellige plattformer.
+
+_____________________________________________________________________________________________________________________________
+ToDo - NonFunctional requirements:
+ - Write scenarios (possibly more then one) for each major quality
+ - Refine qualities
+ - Work on constraints
+    - We have enough constrants. Now we need to define some critical quality scenarios and lay down tactics to deal with them
+
+
+
+- BPMN - modeller for beskrevede oppgaver i kravspec og uc - modeller
+- Database - oppsett av testtjener
+- Server howTo - Linux
+- Oppsett av pakkeavhengigheter i composer.json
+- Sett opp barebone server
+Constraints
+. Spesialiser, webbasert kontrollapp tilgjengelig kun for hr og ledelse
+. App for ansatte på hvilken som helst enhet. Ikke native app for droid og ifon. 
+. Vi drifter egen skybasert tjener som leverer 1) web appen for ledelse og 2) vaktappen til ansatte. Ergo må systemet autentisere og gjenkjenne systemets brukere og skille mellom leder og vanlig ansatt.
+. Vaktappen er webbasert og kjører fra en annen tjener. Denne appen er ikke native - da må vi lage tre ulike implementasjoner av samme program.
+. Klient-tjener?
+. MVC/laginndeling, det vil si adskilt logikk for handtering av webfrontend, autentiseringslogikk, kontrollere til visningen, og datamodellen.
+. Mulig teknologi for realisering av arkitektur: MySQL, Symfony, PHP, Twig
+. Det skal være mulig å aksessere programvaren utenfor kundens intranett.
+
+Alternatively, Agenda could deliver a licensed copy to each customer such that they maintain their own database, and then more easily integrate Agenda towards other local information systems (better flexibility, maintainability becomes critical attribute)
+ - Use Case: Employee wants to swap shift before they arrive at work, that is, wherever, whenever they want.
+ - Use Case: The IT department may want to integrate Agenda into their own information system.
+ 
+ 
+ 
+ ________________________________________________________________________________________________________________-
+ NOTATER - Lagres for referanses skyld
+Farger - til base.html
+Dashbord1
+#AF4EDB
+Dashbord2
+#BF7155
+
+LOGO#C94D25
+Other
+database_driver:    pdo_pgsql # USe postgres as database driver instead of mysql.
+
+Write cache error:
+http://stackoverflow.com/questions/13211829/symfony2-failed-to-write-cache-file
+Løysing
+http://forum.symfony-project.org/forum/32/topic/38514.html
+cache-bug
+http://stackoverflow.com/questions/8449345/symfony-2-cacheclear-bug
+debugging i symfony
+http://symfony.com/doc/current/cookbook/debugging.html
+
+
+sudo apt-get install curl
+
+
+1 $ sudo curl -LsS https://symfony.com/installer -o /usr/local/bin/symfony
+2 $ sudo chmod a+x /usr/local/bin/symfony
+3 $ cd /var/www/html/agenda
+
+
+
+FORSLAG
+paragonie/random_compat suggests installing ext-libsodium (Provides a modern crypto API that can be used to generate random bytes.)
+doctrine/doctrine-cache-bundle suggests installing symfony/security-acl (For using this bundle to cache ACLs)
+sensio/framework-extra-bundle suggests installing symfony/psr-http-message-bridge (To use the PSR-7 converters)
+monolog/monolog suggests installing aws/aws-sdk-php (Allow sending log messages to AWS services like DynamoDB)
+monolog/monolog suggests installing doctrine/couchdb (Allow sending log messages to a CouchDB server)
+monolog/monolog suggests installing ext-amqp (Allow sending log messages to an AMQP server (1.0+ required))
+monolog/monolog suggests installing ext-mongo (Allow sending log messages to a MongoDB server)
+monolog/monolog suggests installing graylog2/gelf-php (Allow sending log messages to a GrayLog2 server)
+monolog/monolog suggests installing php-console/php-console (Allow sending log messages to Google Chrome)
+monolog/monolog suggests installing raven/raven (Allow sending log messages to a Sentry server)
+monolog/monolog suggests installing rollbar/rollbar (Allow sending log messages to Rollbar)
+monolog/monolog suggests installing ruflin/elastica (Allow sending log messages to an Elastic Search server)
+monolog/monolog suggests installing videlalvaro/php-amqplib (Allow sending log messages to an AMQP server using php-amqplib)
+
+Major Quality Attributtes for Agenda
+ * Availability
+   Amount of downtime during a year. Critical for services delivered over a computer network. Agenda will deliver shift management services to their customers from one central server. <Single point of failure>.
+ * Reliability
+   The probability that a system will not fail and that it will perform its intended function for a speci�ed time interval.
+ * Usability
+   Measure of how fast and easily the customer learns to deploy the software. Critical if customers deploy an MVP, as new, incemental releases must uphold this quality in order not to lose the customer to competitors or substitutes.
+ * Efficiency
+   Measure of how fast users can complete tasks the functionality of the software is supposedly supporting. In the case of Agenda, an HR manager should be able to swiftly assign an employee to a shift, detach an employee off a shift, and edit the schedule of a shift, and with more ease then with the competition.
+ * Correctness
+   The software must adhere to its functional requirements. May seem trivial, but following up on functional requirements is indeed easier written then done.
+ * Testability
+   Tesitifies as to how complicated the testing phase is. A software system that is deployed early on in its life cycle, desparately needs to be easily tried and tested.
+ * Security
+   Measure of how hard it is to compromise the system through bypassing implemented user authentication services. Clearly, an employee really should not under any circumstance be able to actually access Agenda's data model and tinker with it to the extent that he or she seems to be on a false sick leave. A popular system requirement for corporate software during early development is "The software system should be secure." Occasionally it is more cost effective to bother with integrity.
+ * Scalability
+   Measure of how the system perform performs as the database grows.
+ * Performance
+   Measure of how fast the system responds to user interaction.
+ * Transparancy
+   It should be easy and swift to troubleshoot the software during development, testing and deployment.
+
+Minor Quality Attributtes for Agenda
+ * Integrity
+   Measure of how well the software performs while compromised. Not to be confused with security.
+ * Portability
+   Measure of many platforms the software can be made to support. Agenda is web-based, no porting is nescessary, unless we want to support Internet Explorer too.
+ * Reliability
+   Measure of how consistent the software is by change of work environment.
+ * Flexibility
+   Measure of how modifiable the software is and how easy it is to interface it towards 3rd party systems. Currently not a critical attribute for the Minimum Viable Product.
+ * Interoperability
+   Measure of how well the software exchanges data with other services within the organization it is deployed in. Later increments of Agenda may integrate better towards payroll systems, recruitment software or other Information Systems the HR management may deploy.
+
+
+
+Antakelse
+Telefon: 8 sifre
+99999999+1
+100000000
+11110100001001000000
+tlf: 20 biter
+enum: 5 elementer
+
+
+ * Maintainability
+   Measure of how cost-efficiently and easily minor and major increments can be developed for the software after it is handed off to the customer.
+Usually a treasured attribute for agile projects or when customers begin to deploy the software already from its Minimum Viable Product stage.
+

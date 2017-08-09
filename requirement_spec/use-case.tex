@@ -1,0 +1,120 @@
+\chapter{Use-Case}
+
+\section{Roller og aktører i systemet}
+
+En aktør er en person, et program eller en maskin som interagerer med systemet. Fire av systemets aktører er definert som følger: Utviklerne er aktørene som implementerer programvarekomponenter som systemet eksekverer når det kjører. Drifterne er de som holder systemet vedlike og sørger for at det fungerer uten feil som rammer dets tilgjenglighet for brukerne. Sjefen er aktøren som registrerer seg og sitt firma inn i systemet, legge til ansatte i dette firmaet blant eksisterende brukere, tilordne sine ansatte vakter samt varsle dem om særegenheter ved en eller flere vakter. Den ansatte er den aktøren som kan frasi seg vakter og la dem stå åpne for andre kompatible ansatte og bytte egne vakter med andre kompatible ansatte.\par
+En rolle i systemet er et privilegienivå som direkte begrenser en brukers adgang til visse deler av systemet ved hjelp av kontrolløkker. Dette er en flott funksjonalitet å ha for programmererne som ønsker å direkte nekte noen bruker adgang til sentrale funksjoner som skal forbeholdes for eksempel de som drifter den sentrale apllikasjonstjeneren. I systemet har man definert følgende fire roller:
+\\
+\begin{table}[h!]
+\begin{center}
+ \begin{tabular}{||c c c||}
+ \hline
+ Navn på rolle & Tilsvarer aktør & Beskrivelse \\ [0.5ex]
+ \hline\hline
+ Admin & \shortstack{Utviklere;\\systemdriftere} & \shortstack{De som har det høyeste privilegiet i rollehierarkiet.\\Kontrollerer og moderer alle registrerte firma\\og alle registrerte brukere i systemet.}  \\
+ \hline
+ Manager &Sjef& \shortstack{De som er ansvarlige for å tilordne de ansatte\\vakter samt varsle dem om\\særegenheter ved en eller flere vakter. Underordnet Admin.} \\
+ \hline
+ Employee &Ansatt& \shortstack{De som kan bytte egne vakter med andre ansatte,\\samt frasi seg vakter de ikke kan ta.\\Underordnet Admin.} \\
+ \hline
+ Guest &IT& \shortstack{Andre som har fått tilgang til systemet,\\til eksempel presse.\\Underordnet Manager og Employee.} \\
+ \hline
+ \end{tabular}
+\caption{Roller definert i systemets kildekode}
+\label{table:1}
+\end{center}
+\end{table}
+
+Rollehierarkiet kan oppsumeres i følgende trestruktur: Admin > Manager > Guest; Admin > Employee > Guest. Dette betyr at de moduler i systemet brukere med Employee-rollen programmeres tilgang til blir per defininsjon utilgjengeliggjort for brukere med Manager-rollen. Brukere som er gjester har ingen rett til å se hverken vaktlister eller kommende vaktbytter for noen firma som helst.
+\newpage
+%Legend
+\section{Terminologi}
+\begin{tabular}{p{1.5cm} p{3cm} | }
+	\hline
+	\multicolumn{1}{| r}{\texttt{C:}} & Use Case\\
+	\multicolumn{1}{| r}{\texttt{A:}} & Administrator\\
+	\multicolumn{1}{| r}{\texttt{M:}} & Manager\\
+	\multicolumn{1}{| r}{\texttt{E:}} & Employee\\
+	\hline
+\end{tabular}
+\\[1cm]
+%Overview
+\section{Use-Cases}
+\rowcolors{2}{row-gray}{white}
+\begin{tabular}{| l | l | l | l | l | l | l |}
+	\hline
+	\rowcolor{header-blue}
+	\usecaseitem{\textcolor{white}{ID}}{\textcolor{white}{Plattf.}}{\textcolor{white}{Use Case}}{\textcolor{white}{Prio.}}{\textcolor{white}{Dev.pakke}}{\textcolor{white}{Dev.sekv.}}{\textcolor{white}{Figur}}
+	\hline
+	\usecaseitem{C-01}{Web}{Logon/Authentication}
+		{1}{1}{1}{}
+	\usecaseitem{C-02}{Web}{Show Weekly Shift Roster}
+		{1}{1}{1}{\citefigure{Web Ukesvisning}}
+	\usecaseitem{C-03}{Web}{Show Monthly Shift Roster}
+		{4}{4}{5}{\citefigure{Web Månedsvisning}}
+	\usecaseitem{C-04}{Mobile}{Show Monthly Shift Roster}
+		{1}{1}{2}{\citefigure{Mobil Månedsvisning}}
+	\usecaseitem{C-05}{Mobile}{Show Upcoming Shift Roster}
+		{4}{4}{5}{\citefigure{Mobil Agenda}}
+	\usecaseitem{C-A-01}{Web}{\textcolor{red}{Define Operation}}
+		{N/A}{N/A}{N/A}{}
+	\usecaseitem{C-M-01}{Web}{Register Shift}
+		{1}{2}{3}{}
+	\usecaseitem{C-M-02}{Web}{Edit/Delete Shift}
+		{1}{2}{3}{}
+	\usecaseitem{C-M-03}{Web}{Copy Shifts}
+		{2}{3}{4}{}
+	\usecaseitem{C-M-04}{Web}{Handle Disowned Shift}
+		{2}{3}{4}{}
+	\usecaseitem{C-M-05}{Web}{Handle Shift Swap}
+		{2}{3}{4}{}
+	\usecaseitem{C-M-06}{Web}{Register Persona}
+		{1}{1}{1}{}
+	\usecaseitem{C-M-07}{Web}{Edit/Delete Persona}
+		{1}{1}{1}{}
+	\usecaseitem{C-M-08}{Web}{Register Position}
+		{3}{4}{5}{}
+	\usecaseitem{C-M-09}{Web}{Edit/Delete Position}
+		{3}{4}{5}{}
+	\usecaseitem{C-M-10}{Web}{Assign Position}
+		{3}{4}{5}{}
+	\usecaseitem{C-M-11}{Web}{Register Announcement}
+		{4}{4}{5}{}
+	\usecaseitem{C-M-12}{Web}{Edit/Delete Announcement}
+		{4}{4}{5}{}
+	\usecaseitem{C-M-13}{Web}{Assign Announcement}
+		{4}{4}{5}{}
+	\usecaseitem{C-E-01}{Mobile}{Logon/Authentication}
+		{1}{1}{2}{\citefigure{Mobil Login}}
+	\usecaseitem{C-E-02}{Mobile}{Show / Edit My Profile}
+		{4}{5}{6}{\citefigure{Min Profil}}
+	\usecaseitem{C-E-03}{Mobile}{Inspect (Owned) Shift}
+		{2}{3}{4}{\citefigure{Inspiser Vakt}}
+	\usecaseitem{C-E-04}{Mobile}{Disown Shift}
+		{2}{3}{4}{}
+	\usecaseitem{C-E-05}{Mobile}{Claim Disowned Shift}
+		{2}{3}{4}{}
+	\usecaseitem{C-E-06}{Mobile}{Swap Shift with Colleague}
+		{2}{3}{4}{\citefigure{Bytt Vakter}}
+	\hline
+\end{tabular}
+
+
+
+%\doubleimg
+\imgC{demo-screens/web/show-weekly.png}{width=15cm}{Web Ukesvisning}
+\imgC{demo-screens/web/show-monthly.png}{width=15cm}{Web Månedsvisning}
+
+\doubleimg
+{\imgC{demo-screens/mob/show-monthly.png}{width=5.8cm}{Mobil Månedsvisning}}
+{\imgC{demo-screens/mob/show-upcoming.png}{width=5.8cm}{Mobil Agenda}}
+
+
+\doubleimg
+{\imgC{demo-screens/mob/login.png}{width=5.8cm}{Mobil Login}}
+{\imgC{demo-screens/mob/my-profile.png}{width=5.8cm}{Min Profil}}
+
+\doubleimg
+{\imgC{demo-screens/mob/inspect-shift.png}{width=5.8cm}{Inspiser Vakt}}
+{\imgC{demo-screens/mob/swap-shifts.png}{width=5.8cm}{Bytt Vakter}}
+	

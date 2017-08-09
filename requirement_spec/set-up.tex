@@ -1,0 +1,178 @@
+\usepackage[margin=1in]{geometry} % Sets margin of document
+\usepackage[table]{xcolor}
+\usepackage[framemethod=TikZ]{mdframed}
+\usepackage[norsk]{babel} % Sets language of document
+\usepackage{graphicx} % Package: graphics controls
+\usepackage{colortbl} % Package: color controls
+\usepackage{wrapfig}
+\usepackage{lscape}
+\usepackage{rotating}
+\usepackage{epstopdf}
+\usepackage{hyperref} %linking from content table
+\usepackage{xstring} %string-manipulation
+\usepackage{enumitem} %used for enumerate-manipulation
+\usepackage{float} %used to properly place float-objects (figures)
+\usepackage[T1]{fontenc}
+\usepackage{titlesec, blindtext, color}
+\usepackage[utf8]{inputenc} % Sets the Charset to UTF-8
+\usepackage{tabularx,ragged2e,booktabs,caption}
+\usepackage{ulem} %used for strikeout
+\usepackage{verbatim} %used for block-commenting
+\usepackage{mathtools} %mathematic notation. includes package amsmath
+\usepackage{longtable} %tables that stretch across multiple pages
+
+
+\definecolor{red}{RGB}{230, 0, 0}
+\definecolor{gray75}{gray}{0.75}
+\definecolor{gray1}{gray}{0.97}
+\definecolor{gray2}{gray}{0.90}
+\definecolor{gray3}{gray}{0.80}
+\definecolor{gray4}{gray}{0.63}
+\definecolor{white}{gray}{1.00}
+\definecolor{header-blue}{RGB}{0,0,204}
+\definecolor{row-gray}{RGB}{230 230 230}
+
+\newcommand{\hsp}{\hspace{20pt}}
+
+\newcommand{\citefigure}[1]{\ref{#1} (s.\pageref{#1})}
+
+\newcounter{sectionCount}
+\setcounter{sectionCount}{1}
+
+% Custom command for use-case display. 
+% Takes 3 parameters [title, ID, Description]
+\newcommand{\fr}[3]{
+\subsection{Funksjonelt krav: #1}
+\begin{center}\begin{tabular}{p{2cm}p{12.5cm}} 
+	\multicolumn{1}{r}{\textbf{ID:}} & #2\\
+	\multicolumn{1}{r}{\textbf{Description:}} & #3\\
+\end{tabular}\end{center}
+}
+
+% Custom command for requirement-specs display. 
+% Takes 4 parameters [title, ID, Use-Case ID, Description]
+\newcommand{\requirementspec}[4]{
+	\subsection{Requirement: #1}
+	\begin{center}\begin{tabular}{p{2cm}p{12.5cm}} 
+			\multicolumn{1}{r}{\textbf{ID:}} & #2\\
+			\multicolumn{1}{r}{\textbf{Use-Case ID:}} & #3\\
+			\multicolumn{1}{r}{\textbf{Description:}} & #4\\
+		\end{tabular}\end{center}
+	}
+
+
+% Custom command for display of image. 
+% Takes 2 parameters [filename (reads from folder 'img'), Caption]
+\newcommand{\img}[2]{ %images with borders
+	\begin{figure}[H]
+	\centering
+	\fcolorbox{black}{black}{\includegraphics[width=15cm]{img/#1}}
+	\caption[#2]{#2}
+	\end{figure}
+}
+
+% Custom command for display of image; able to specify attributes for image. 
+% Takes 3 parameters [filename (reads from folder 'img'), Attributes, Caption]
+\newcommand{\imgC}[3]{ %images with borders and custom parameters
+	\begin{figure}[H]
+	\centering
+	\fcolorbox{black}{black}{\includegraphics[#2]{img/#1}}
+	\caption[#3]{#3}
+	\label{#3}
+	\end{figure}
+}
+
+\newcommand{\doubleimg}[2]{
+	\begin{figure}[H]
+		\centering
+		\begin{minipage}{0.45\textwidth}
+			\centering
+			#1
+		\end{minipage}\hfill
+		\begin{minipage}{0.45\textwidth}
+			\centering
+			#2
+		\end{minipage}
+	\end{figure}
+}
+
+\newcommand{\liste}[1]{\begin{enumerate}[label=\textbf{#1:\arabic*}]}
+\newcommand{\inn}{\begin{enumerate}[label*=\textbf{.\arabic*}]}
+\newcommand{\ut}{\end{enumerate}}
+
+\newcommand{\usecaseitem}[7]{
+	{\footnotesize \texttt{#1}} & 
+	{\footnotesize \texttt{#2}} & 
+	{\footnotesize \texttt{#3}} & 
+	{\footnotesize \texttt{#4}} & 
+	{\footnotesize \texttt{#5}} & 
+	{\footnotesize \texttt{#6}} & 
+	{\footnotesize \texttt{#7}} \\
+}
+
+\newcommand{\nfritem}[3]{
+	{\footnotesize \texttt{#1}} & 
+	{\footnotesize \texttt{#2}} & 
+	{\footnotesize \texttt{#3}} \\
+}
+
+\newcommand{\fritem}[3]{
+	{\footnotesize \texttt{#1}} & 
+	{\footnotesize \texttt{#2}} & 
+	{\footnotesize \texttt{#3}} \\
+}
+
+\newcommand{\beginfr}[1]{
+	\subsection{#1}
+	\rowcolors{2}{row-gray}{white}
+	\begin{tabular}{ | p{70pt} | p{60pt} | p{9cm} | }
+		\hline
+		\rowcolor{header-blue}
+		\fritem{\textcolor{white}{ID}}{\textcolor{white}{NFR ID}}{\textcolor{white}{Krav}}
+}
+
+\newcommand{\stopfr}{
+	\hline
+	\end{tabular}
+}
+
+\newcommand{\genitem}[2]{
+	{\footnotesize \texttt{#1}} & 
+	{\footnotesize \texttt{#2}} \\
+}
+
+\newcommand{\begingen}[1]{
+	\subsection{#1}
+	\rowcolors{2}{row-gray}{white}
+	\begin{tabular}{ | p{60pt} | p{325pt} | }
+		\hline
+		\rowcolor{header-blue}
+		\genitem{\textcolor{white}{ID}}{\textcolor{white}{Krav}}
+}
+	
+\newcommand{\stopgen}{
+	\hline	
+	\end{tabular}
+}
+
+
+%\newcommand{\mysec}[1]{\section*{\arabic{sectionCount}. #1}\addtocounter{sectionCount}{1}}
+
+
+
+\parindent=3ex
+\baselineskip=0pt
+\parskip=0pt
+
+\hypersetup{ %Brukes for å fjerne farger fra linker i content table
+    colorlinks,
+    citecolor=black,
+    filecolor=black,
+    linkcolor=black,
+    urlcolor=black
+}
+
+\titleformat{\chapter}[hang]{\LARGE\bfseries}{Post \thechapter\hsp\textcolor{gray75}{|}\hsp}{0pt}{\LARGE\bfseries}
+\titleformat{\section}[hang]{\normalfont\Large\bfseries}{\thesection}{1em}{}
+
+\newcommand{\HRule}{\rule{\linewidth}{0.5mm}}

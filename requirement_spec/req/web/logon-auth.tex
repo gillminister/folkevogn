@@ -1,0 +1,13 @@
+\beginfr{Logon / Authentication}
+	\fritem{FR-01-01}{NFR-UI-01}{Det finnes et login-skjema som tar mot brukernavn/passord-kombinasjon som kan logge bruker inn på systemet}
+	\fritem{FR-01-01-A}{NFR-UI-01}{Login-skjema postes til kontroller som verifiserer gyldighet av kombinasjon}
+	\fritem{FR-01-01-B}{NFR-UI-01}{Kontroller verifiserer ved å sjekke \texttt{authentication\_utils} i Symfonys Security library}
+	\fritem{FR-01-01-C}{NFR-UI-01}{Web-bruker angis rolle til database-bruker og videresendes hvis kombinasjonen er gyldig}
+	\fritem{FR-01-01-D}{NFR-UI-01}{Web-bruker får respons om ugyldig kombinasjon}
+	\fritem{FR-01-02}{NFR-UI-01-A}{Dersom angitte rolle (til web-bruker) er \texttt{ROLE\_EMPLOYEE} eller lavere, skal kun en nettside med guide til installasjon av mobil applikasjon vises}
+	\fritem{FR-01-03-A}{NFR-UI-02}{Det finnes en \texttt{Reset passord}-knapp. Det genereres en reset-token som kobles til en bruker-tuppel via oppgitte mail. Reset-token sendes til mailadresse}
+	\fritem{FR-01-03-B}{NFR-UI-02}{Ved å besøke URL \texttt{https://agendasystems.no/ reset-passord/\{token\}} kan besøkende oppgi nytt passord, som kobles til brukers tuppel i database}
+	\fritem{SEC-01-01}{NFR-UI-01}{Web-bruker må ha fått angitt en gyldig rolle for å vise nettsider. \texttt{/login} krever ingen autentisering}
+	\fritem{SEC-01-02-A}{NFR-UI-01}{Input i login-skjema valideres før de prosesseres}
+	\fritem{SEC-01-02-B}{NFR-UI-02}{Input i reset-passord-skjema valideres før de prosesseres}
+\stopfr

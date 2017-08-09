@@ -1,0 +1,12 @@
+Roller/aktører i systemet
+
+En aktør er en person, et program eller en maskin som interagerer med systemet. Fire av systemets aktører er definert som følger: Utviklerne er aktørene som implementerer programvarekomponenter som systemet eksekverer når det kjører. Drifterne er de som holder systemet vedlike og sørger for at det fungerer uten feil som rammer dets tilgjenglighet for brukerne. Sjefen er aktøren som registrerer seg og sitt firma inn i systemet, legge til ansatte i dette firmaet blant eksisterende brukere, tilordne sine ansatte vakter samt varsle dem om særegenheter ved en eller flere vakter. Den ansatte er den aktøren som kan frasi seg vakter og la dem stå åpne for andre kompatible ansatte og bytte egne vakter med andre kompatible ansatte.
+  En rolle i systemet er et privilegienivå som direkte begrenser en brukers adgang til visse deler av systemet ved hjelp av kontrolløkker. Dette er en flott funksjonalitet å ha for programmererne som ønsker å direkte nekte noen bruker adgang til sentrale funksjoner som skal forbeholdes for eksempel de som drifter den sentrale apllikasjonstjeneren. I systemet har man definert følgende fire roller:
+
+Navn på rolle		Tilsvarer aktør			Beskrivelse
+Admin				Utviklere; systemdriftere	De som har det høyeste privilegiet i rollehierarkiet. Kontrollerer og moderer alle registrerte firma og alle registrerte brukere i systemet.
+Manager			Sjef							De som er ansvarlige for å tilordne de ansatte vakter samt varsle dem om særegenheter ved en eller flere vakter. Underordnet Admin.
+Employee			Ansatt							De som kan bytte egne vakter med andre ansatte, samt frasi seg vakter de ikke kan ta. Underordnet Admin.
+Guest				I/T								Andre som har fått tilgang til systemet, til eksempel presse Underordnet Manager og Employee.
+
+Rollehierarkiet kan oppsumeres i følgende trestruktur: Admin > Manager > Guest; Admin > Employee > Guest. Dette betyr at de moduler i systemet brukere med Employee-rollen programmeres tilgang til blir per defininsjon utilgjengeliggjort for brukere med Manager-rollen. Brukere som er gjester har ingen rett til å se hverken vaktlister eller kommende vaktbytter for noen firma som helst.

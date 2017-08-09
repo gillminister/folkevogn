@@ -1,0 +1,6 @@
+Source              |  View elements regarding editing shifts via a calendar. 
+Stimulus            | The manager edits shift hours and commits the changes through the controllers.
+Environment         | Normal Deployment Run Time.
+Artifacts           | Doctrine. DBMS. Controllers. View.
+Response            | Database ggets updated through Doctrine repositories.
+Response Measure    | How fast the shift view is updated.

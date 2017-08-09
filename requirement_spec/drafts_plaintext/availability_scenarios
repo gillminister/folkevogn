@@ -1,0 +1,16 @@
+Source              | Developers updating the server software, and all components are not properly compatible.
+Stimulus            | The web server stack crashes as an HR Manager tries to connect to it. (omission scenario)
+Environment         | The developers have recently pushed an updated version of the components (i.e we just ran composer.phar update and pushed the resulting components without properly testing all of the affected Symfony components)
+Artifacts           | The DBMS (PostgreSQL), Doctrine, PHP, Composer, Twig
+Response            | Rollback to last well-functioning build. Check the logs/stacktraces to spot where the fatal error occured.
+Response Measure    | The time taken to do the rollback (non-transactional) operation
+
+Source              | The HR manager is editing shift hours through the web admin UI, but just before the changes are commited to the database, a user has requested a list of their shift hours, whose shifts have been rewritten shortly after their read is executed.
+Stimulus            | The user reads dirty data (unrepeatable).
+Environment         | Doctrine runs a SELECT - query before ALTER TABLE.
+Artifacts           | DBMS (PostgreSQL), Doctrine
+Response            | Since SSI - Serializable SNapsot Isolation, is implemented in Postgres, all transactions are isolated at the serilizable level, and thus consistent. Doctrine can be made aware of the sudden edit in the data model, and fire an update read to the employee requesting the shift read.
+Response Measure    | The time taken for the server to resend the updated list 
+
+The 'sniped write' scenario - a question on correctness (indirectly availability too) during concurrent transactions
+Our HR manager is editing shift hours through the web admin UI, but just before the changes are commited to the database, a user has requested a list of their shift hours, whose shifts have been rewritten shortly after the SELECT operation is executed, thus the end user receives (unknowingly) a dirty read, unintentionally sniped by a change of the model.  

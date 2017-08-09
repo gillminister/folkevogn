@@ -1,0 +1,19 @@
+\section{Funksjonelle Krav: Generelt}
+\beginfr{Technical}
+	\fritem{FR-TEC-01}{}{Webserver kjører på Nginx}
+	\fritem{FR-TEC-02}{}{Nettsidene støtter IE8+, Edge, Google Chrome, Mozilla Firefox, Safari\textcolor{red}{, Opera}}
+	\fritem{FR-TEC-03}{}{Mailserver er eid av Isphuset\cite{isphusetsite}}
+\stopfr
+
+\beginfr{Security}
+	\fritem{FR-SEC-01}{NFR-SEC-01}{Konfidensiell informasjon må lagres kryptert}
+	\fritem{FR-SEC-02}{NFR-SEC-02}{Webserver bruker HTTPS-protokollen}
+	\fritem{FR-SEC-03}{NFR-SEC-02}{Bruker-modifiserbare outputs sikres mot XSS}
+	\fritem{FR-SEC-04}{NFR-SEC-03}{Passord har minst 6 tegn for 'Employee'-entiteten}
+	\fritem{FR-SEC-05}{NFR-SEC-03}{Passord har minst 8 tegn for 'Manager'-entiteten}
+	\fritem{FR-SEC-06}{NFR-SEC-04}{Brukere skal ikke kunne lese, redigere eller slette informasjon med mindre det er nødvendig for at tjenesten systemet tilbyr til brukeren skal operere}
+	\fritem{FR-SEC-07}{NFR-SEC-05}{Brukernavn/passord-kombinasjonen til alle kontoer på serveren skal være vanskelig å gjette og/eller brute-force}
+	\fritem{FR-SEC-08}{NFR-SEC-06}{Programvare som brukes til å behandle konfidensiell data må granskes for om den møter systemets sikkerhetsmessige behov}
+	\fritem{FR-SEC-09}{NFR-SEC-06}{Programvaren på serveren skal laste ned sikkerhetsoppdateringer jevnlig}
+	\fritem{FR-SEC-10}{NFR-SEC-07}{Det må finnes en throttling/black hole-mekanisme for å hanskes med DoS}
+\stopfr

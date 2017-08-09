@@ -1,0 +1,14 @@
+Source              | Frustrated employee who wants to mess with the data model to make more spare time.
+Stimulus            |  Employee hacks into the web admin and attempts to manually and "legally" edit data in the database as 'the manager'.
+Environment         |  During deployment.
+Artifacts           | DBMS. Data to be tampered.
+Response            | The software system must notify the admin by an automatic email (By using Swiftmailer) that says that the data has been modified. The system has in this scenario no means of detecting foul play as the attcker is authenticated as the manager user account.
+Response Measure    |  Can the manager remotely input commands to 1) log out and lock the hijacked admin-user and 2) identify and undo rogue changes?
+Solution: Implement reverting, let changes be identifiable.
+
+Source              | An external, unauthorized entity who intends to drop the entire database.
+Stimulus            | An attempt to circumvent the authentication and identification component.
+Environment         | During deployment, on the DO cloud.
+Artifacts           | Data. Identification component.
+Response            | The system must be able to lock down. (leave that to DO) Use audit trail to recover. (linked to integrity). The attacker must leave a trail even if the yuse Tor.
+Response Measure    | How long it takes for the attacker to e.g. brute force a password. How well the trail of evidence can be read.

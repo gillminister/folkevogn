@@ -1,0 +1,35 @@
+Major Quality Attributtes for Agenda
+ * Availability
+   Amount of downtime during a year. Critical for services delivered over a computer network. Agenda will deliver shift management services to their customers from one central server. <Single point of failure>.
+ * Security
+   Measure of how hard it is to compromise the system through bypassing implemented user authentication services. Clearly, an employee really should not under any circumstance be able to actually access Agenda's data model and tinker with it to the extent that he or she seems to be on a false sick leave. A popular system requirement for corporate software during early development is "The software system should be secure." Occasionally it is more cost effective to bother with integrity.
+ * Usability
+   Measure of how fast and easily the customer learns to deploy the software. Critical if customers deploy an MVP, as new, incemental releases must uphold this quality in order not to lose the customer to competitors or substitutes.
+ * Modifiability
+   Measure of how fast changes to the system may be made
+ * Reliability
+   The probability that a system will not fail and that it will perform its intended function for a specified time interval.
+ * Efficiency
+   Measure of how fast users can complete tasks the functionality of the software is supposedly supporting. In the case of Agenda, an HR manager should be able to swiftly assign an employee to a shift, detach an employee off a shift, and edit the schedule of a shift, and with more ease then with the competition.
+ * Correctness
+   The software must adhere to its functional requirements. May seem trivial, but following up on functional requirements is indeed easier written then done.
+ * Testability
+   Tesitifies as to how complicated the testing phase is. A software system that is deployed early on in its life cycle, desparately needs to be easily tried and tested.
+ * Scalability
+   Measure of how the system perform performs as the database grows.
+ * Performance
+   Measure of how fast the system responds to user interaction.
+ * Transparancy
+   It should be easy and swift to troubleshoot the software during development, testing and deployment.
+
+Minor Quality Attributtes for Agenda
+ * Integrity
+   Measure of how well the software performs while compromised. Not to be confused with security.
+ * Portability
+   Measure of many platforms the software can be made to support. Agenda is web-based, no porting is nescessary, unless we want to support Internet Explorer too.
+ * Reliability
+   Measure of how consistent the software is by change of work environment.
+ * Flexibility
+   Measure of how modifiable the software is and how easy it is to interface it towards 3rd party systems. Currently not a critical attribute for the Mnimum Viable Product.
+ * Interoperability
+   Measure of how well the software exchanges data with other services within the organization it is deployed in. Later increments of Agenda may integrate better towards payroll systems, recruitment software or other Information Systems the HR management may deploy.

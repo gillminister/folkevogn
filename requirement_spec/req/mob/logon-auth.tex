@@ -1,0 +1,11 @@
+\beginfr{Logon / Authentication}
+	\fritem{FR-E-01-01}{NFR-UI-25}{Ansatt kan sende mail/passord-kombinasjon via login-skjema ved (første) oppstart av app}
+	\fritem{FR-E-01-01-A}{NFR-UI-25}{Login-skjema postes til kontroller som verifiserer gyldighet av kombinasjon}
+	\fritem{FR-E-01-01-B}{NFR-UI-25}{Kontroller verifiserer ved å sjekke \texttt{authentication\_utils} i Symfonys Security library}
+	\fritem{FR-E-01-01-C}{NFR-UI-25}{Web-bruker angis rolle til database-bruker og videresendes hvis kombinasjonen er gyldig}
+	\fritem{FR-E-01-01-D}{NFR-UI-25}{Dersom rolle er \texttt{ROLE\_MANAGER} eller høyere videresendes bruker til web-versjon}
+	\fritem{FR-E-01-02}{NFR-UI-25}{Det finnes \texttt{reset passord}-funksjonalitet identisk med web-versjon. Se funksjonelt krav \texttt{FR-01-03-A}}
+	\fritem{FR-E-01-A-01}{NFR-UI-26}{mail/passord-kombinasjon skal lagres på telefon dersom det er gyldig, slik at bruker slipper å logge inn hver gang applikasjonen starter}
+	\fritem{FR-E-01-A-02}{NFR-UI-26}{Lagret bruker-credentials skal brukes til å periodevis sjekke etter nye/endringer i vakter/persondata tilhørende bruker}
+	\fritem{SEC-E-01-01}{NFR-UI-25}{Input til logon- og reset-passord-skjema valideres før de prosesseres}
+\stopfr
