@@ -39,29 +39,40 @@
 \newcounter{sectionCount}
 \setcounter{sectionCount}{1}
 
-% Custom command for use-case display. 
+% Custom command for use-case display.
 % Takes 3 parameters [title, ID, Description]
 \newcommand{\fr}[3]{
 \subsection{Funksjonelt krav: #1}
-\begin{center}\begin{tabular}{p{2cm}p{12.5cm}} 
+\begin{center}\begin{tabular}{p{2cm}p{12.5cm}}
 	\multicolumn{1}{r}{\textbf{ID:}} & #2\\
 	\multicolumn{1}{r}{\textbf{Description:}} & #3\\
 \end{tabular}\end{center}
 }
 
-% Custom command for requirement-specs display. 
+% Custom command for requirement-specs display.
 % Takes 4 parameters [title, ID, Use-Case ID, Description]
 \newcommand{\requirementspec}[4]{
 	\subsection{Requirement: #1}
-	\begin{center}\begin{tabular}{p{2cm}p{12.5cm}} 
+	\begin{center}\begin{tabular}{p{2cm}p{12.5cm}}
 			\multicolumn{1}{r}{\textbf{ID:}} & #2\\
 			\multicolumn{1}{r}{\textbf{Use-Case ID:}} & #3\\
 			\multicolumn{1}{r}{\textbf{Description:}} & #4\\
 		\end{tabular}\end{center}
 	}
 
+% Custom command for worklog-item display.
+% Takes 4 parameters [date, short description, attendants, Description]
+\newcommand{\worklogitem}[4]{
+	\section{#1 - #2}
+	\begin{tabular}{p{3cm} l}
+		\multicolumn{1}{r}{\textbf{Tilstede:}} & #3\\
+	\end{tabular}
+	\\\\
+	#4
+}
 
-% Custom command for display of image. 
+
+% Custom command for display of image.
 % Takes 2 parameters [filename (reads from folder 'img'), Caption]
 \newcommand{\img}[2]{ %images with borders
 	\begin{figure}[H]
@@ -71,7 +82,7 @@
 	\end{figure}
 }
 
-% Custom command for display of image; able to specify attributes for image. 
+% Custom command for display of image; able to specify attributes for image.
 % Takes 3 parameters [filename (reads from folder 'img'), Attributes, Caption]
 \newcommand{\imgC}[3]{ %images with borders and custom parameters
 	\begin{figure}[H]
@@ -101,24 +112,24 @@
 \newcommand{\ut}{\end{enumerate}}
 
 \newcommand{\usecaseitem}[7]{
-	{\footnotesize \texttt{#1}} & 
-	{\footnotesize \texttt{#2}} & 
-	{\footnotesize \texttt{#3}} & 
-	{\footnotesize \texttt{#4}} & 
-	{\footnotesize \texttt{#5}} & 
-	{\footnotesize \texttt{#6}} & 
+	{\footnotesize \texttt{#1}} &
+	{\footnotesize \texttt{#2}} &
+	{\footnotesize \texttt{#3}} &
+	{\footnotesize \texttt{#4}} &
+	{\footnotesize \texttt{#5}} &
+	{\footnotesize \texttt{#6}} &
 	{\footnotesize \texttt{#7}} \\
 }
 
 \newcommand{\nfritem}[3]{
-	{\footnotesize \texttt{#1}} & 
-	{\footnotesize \texttt{#2}} & 
+	{\footnotesize \texttt{#1}} &
+	{\footnotesize \texttt{#2}} &
 	{\footnotesize \texttt{#3}} \\
 }
 
 \newcommand{\fritem}[3]{
-	{\footnotesize \texttt{#1}} & 
-	{\footnotesize \texttt{#2}} & 
+	{\footnotesize \texttt{#1}} &
+	{\footnotesize \texttt{#2}} &
 	{\footnotesize \texttt{#3}} \\
 }
 
@@ -137,7 +148,7 @@
 }
 
 \newcommand{\genitem}[2]{
-	{\footnotesize \texttt{#1}} & 
+	{\footnotesize \texttt{#1}} &
 	{\footnotesize \texttt{#2}} \\
 }
 
@@ -149,9 +160,9 @@
 		\rowcolor{header-blue}
 		\genitem{\textcolor{white}{ID}}{\textcolor{white}{Krav}}
 }
-	
+
 \newcommand{\stopgen}{
-	\hline	
+	\hline
 	\end{tabular}
 }
 
